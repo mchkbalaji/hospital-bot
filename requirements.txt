@@ -1,0 +1,4 @@
+pyTelegramBotAPI
+google-ai-generativelanguage
+python-dotenv
+pandas
