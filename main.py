@@ -74,7 +74,7 @@ chat_session = model.start_chat(
 
 import telebot
 
-bot = telebot.TeleBot("TELEGRAM_KEY")
+bot = telebot.TeleBot(TELEGRAM_KEY)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
