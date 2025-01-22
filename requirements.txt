@@ -3,3 +3,5 @@ google-ai-generativelanguage
 google-generativeai
 python-dotenv
 pandas
+Flask==2.2.2
+
