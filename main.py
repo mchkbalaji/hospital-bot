@@ -99,7 +99,7 @@ def echo_all(message):
 	bot.send_message(message.chat.id, response.text)
 
 
+bot.infinity_polling()
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=int(os.getenv('PORT', 8080)))
-
-bot.infinity_polling()
