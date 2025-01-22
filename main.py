@@ -2,12 +2,24 @@
 # pip install python-dotenv
 from dotenv import load_dotenv
 import os
+from flask import Flask
+
+app = Flask(__name__)
 
 TELEGRAM_KEY = os.getenv("TELEGRAM_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 
+@app.route('/')
+def index():
+    return "Bot is running"
 
+@app.route('/webhook', methods=['POST'])
+def webhook():
+    json_str = request.get_data().decode('UTF-8')
+    update = telebot.types.Update.de_json(json_str)
+    bot.process_new_updates([update])
+    return "OK"
 
 """
 Install an additional SDK for JSON schema support Google AI Python SDK
@@ -87,5 +99,7 @@ def echo_all(message):
 	bot.send_message(message.chat.id, response.text)
 
 
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=int(os.getenv('PORT', 8080)))
 
 bot.infinity_polling()
