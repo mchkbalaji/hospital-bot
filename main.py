@@ -3,7 +3,6 @@
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
 TELEGRAM_KEY = os.getenv("TELEGRAM_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
